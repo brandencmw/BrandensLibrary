@@ -43,7 +43,6 @@ body{
 
 .search-form {
     width: 65%;
-    text-align: center;
     position: relative;
 }
 
@@ -51,6 +50,14 @@ body{
     display: flex;
     flex-direction: row;
     align-items: center;
+    filter: drop-shadow(16px, 16px, 10px, #000000);
+}
+
+.search-label {
+    color: #FFFFFF;
+    font-size: 40px;
+    font-family: sans-serif;
+    font-weight: lighter;
 }
 
 .search-terms {
@@ -86,8 +93,19 @@ body{
     text-decoration: none;
 }
 
-
-footer {
-    flex: 0 1 auto;
+.browse-section h2 {
+    font-family: sans-serif;
+    font-weight: lighter;
 }
 
+footer {
+    width: 15%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.copyright {
+    color: white;
+    margin-bottom: 10px;
+}

@@ -7,6 +7,7 @@
     <div class="search-form">
         <form action="/" method="POST">
             {% csrf_token %}
+            <label class="search-label" for="search-terms">Search</label>
             <div class="search-bar">
                 <input class="search-terms" type="text" name="search-terms">
                 <button class="search-btn" type="submit">
@@ -20,7 +21,7 @@
     </div>
     <div class="browse-section">
         <h2>Or</h2>
-        <h2><a href="">Browse the Selection</a></h2>
+        <h2><a href="">Browse the Collection</a></h2>
     </div>
 </div>
 {% endblock %}
