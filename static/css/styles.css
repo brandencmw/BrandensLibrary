@@ -98,6 +98,15 @@ body{
     font-weight: lighter;
 }
 
+
+/* Search Found Page */
+.results-frame {
+    height: 100%;
+    width: 100%;
+    color: red
+}
+
+
 footer {
     width: 15%;
     display: flex;
