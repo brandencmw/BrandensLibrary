@@ -41,6 +41,7 @@ INSTALLED_APPS = [
 
     'books',
     'authors',
+    'tags',
 ]
 
 MIDDLEWARE = [
