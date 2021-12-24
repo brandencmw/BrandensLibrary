@@ -16,7 +16,8 @@ def search(request):
             if result not in results:
                 results.append(result)
 
-    context = {'search-results': results}
+    context = {'search_results': results}
+    print(results)
     return render(request, "search-results.html", context)
 
         

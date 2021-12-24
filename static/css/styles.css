@@ -1,3 +1,4 @@
+/* Main styles */
 html {
     height: 100%;
 }
@@ -22,7 +23,20 @@ body{
     align-items: center;
 }
 
+footer {
+    width: 15%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
 
+.copyright {
+    color: white;
+    margin-bottom: 10px;
+}
+
+
+/* Home page styles */
 .main-heading {
     flex: 0 1 auto;
     font-size: 70px;
@@ -41,9 +55,11 @@ body{
     justify-content: center;
 }
 
+/* Main search bar */
 .search-form {
     width: 65%;
     position: relative;
+    margin: 0;
 }
 
 .search-bar {
@@ -74,12 +90,13 @@ body{
 .search-btn {
     width: 3.5rem;
     height: 2.8rem;
-    margin-left: -4rem;
+    margin-left: -3rem;
     background: none;
     border: none;
     outline: none;
 }
 
+/* Browse option */
 .browse-section {
     text-align: center;
     line-height: 3rem;
@@ -98,23 +115,66 @@ body{
     font-weight: lighter;
 }
 
+/* Navbar styles */
+.navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: auto;
+    margin-top: 40px;
+    width: 100%;
+}
+
+.navbar .main-heading {
+    font-size: large;
+    margin-left: 40px;
+}
+
+.nav-links {
+    align-self: right;
+    padding: 0;
+}
+
+.nav-item {
+    display: inline;
+    margin: 0 20px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: large;
+    font-family: sans-serif;
+}
+
+.nav-search {
+    width: 40%;
+}
+
+.nav-search .search-form {
+    width: 100%;
+}
+
+.nav-search-terms {
+    margin-left: 40px;
+    border: none;
+    outline: none;
+    height: 32px;
+    width: 100%;
+    border-radius: 32px;
+}
+
 
 /* Search Found Page */
 .results-frame {
-    height: 100%;
-    width: 100%;
-    color: red
+    margin: 20px 0;
+    border-radius: 40px;
+    min-height: 100%;
+    height: auto;
+    width: 80%;
+    filter: drop-shadow(16px, 16px, 10px, #000000);
+    background-color: #FFFFFF;
 }
 
 
-footer {
-    width: 15%;
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
-}
 
-.copyright {
-    color: white;
-    margin-bottom: 10px;
-}

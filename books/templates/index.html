@@ -6,7 +6,6 @@
 <div class="main-content">
     <div class="search-form">
         <form action="{% url 'search' %}" method="GET">
-            {% csrf_token %}
             <label class="search-label" for="search-terms">Search</label>
             <div class="search-bar">
                 <input class="search-terms" type="text" name="search-terms" id="search-terms">

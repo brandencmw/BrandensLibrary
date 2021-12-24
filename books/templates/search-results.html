@@ -1,7 +1,15 @@
 {% extends 'main.html' %}
 {% block content %}
-<div class="results-frame">
-    
-</div>
-
+    {% block 'navbar' %}
+        {% include 'navbar.html' %}
+    {% endblock %}
+    <div class="results-frame">
+        {% block results %}
+            {% if search_results|length == 0 %}
+                {% include 'search-unfound.html' %}
+            {% else %}
+                {% include 'search-found.html' %}
+            {% endif %}
+        {% endblock %}
+    </div>
 {% endblock %}
