@@ -1,6 +1,32 @@
 {% extends 'main.html' %}
 {% block content %}
-<div class="results-frame">
-    
-</div>
+    {% block navbar %}
+        {% include 'navbar.html' %}
+    {% endblock %}
+    <div class="results-frame">
+        <div class="browse-filter-box">
+            <h4>Filter:</h4>
+            <form action="" method=GET class="filter-form">
+                
+            </form>
+        </div>
+        <div class="browse-content-box">
+            <div class="row">
+                {% for book in books %}
+                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+                        <div class="browse-card">
+                            <div class="browse-card-img">
+                                <img src="{{ book.cover_img }}" alt="">
+                            </div>
+                            <div class="browse-card-content">
+                                <h3><strong>{{book.title}}</strong></h3>
+                                <h3>{{book.author}}</h3>
+                                <h3>{{book.publish_year}}</h3>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
 {% endblock %}

@@ -1,5 +1,5 @@
 {% block 'navbar' %}
-<div class="navbar">
+<div class="nav">
     <div class="main-heading">
         <h1>Branden's Library</h1>
     </div>
@@ -17,11 +17,11 @@
         </form>
     </div>
     <ul class="nav-links">
-        <li class="nav-item">
-            <a class="nav-link" href="#">Home</a>
+        <li class="navbar-item">
+            <a class="navbar-link" href="#">Home</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Browse</a>
+            <a class="navbar-link" href="{% url 'browse-books' %}">Browse</a>
         </li>
     </ul>
 </div>

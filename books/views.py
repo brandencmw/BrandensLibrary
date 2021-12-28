@@ -26,5 +26,10 @@ def book(request, key):
     tags = book.tags.all()
     context = {'book': book, 'author':author, 'tags':tags}
     return render(request, "single-book.html", context)
+
+def browse(request):
+    books = Book.objects.all()
+    context = {'books':books}
+    return render(request, "browse-books.html", context)
         
 
