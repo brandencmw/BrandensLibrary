@@ -1,0 +1,29 @@
+{% extends 'main.html' %}
+{% block content %}
+    {% block navbar %}
+        {% include 'navbar.html' %}
+    {% endblock %}
+    <div class="results-frame">
+        <div class="single-book-main">
+            <img src="{{ book.cover_img.url }}" alt="">
+            <div class="single-book-facts">
+                <h2 class="single-book-title">{{book.title}}</h2>
+                <div class="single-book-topinfo">
+                    <h3>Written by: {{author}}</h3>
+                    <h3>Published: {{book.publish_year}}</h3>
+                </div>
+                <div class="single-book-bottominfo">
+                    <h4>Length: {{book.length}} pages</h4>
+                    <h4>Tags: 
+                        {% for tag in tags %}
+                            <a href="#">{{tag}}</a>
+                        {% endfor %}
+                    </h4>
+                </div>
+            </div>
+        </div>
+        <div class="single-book-description">
+            <h4>{{book.description}}</h4>
+        </div>
+    </div>
+{% endblock %}

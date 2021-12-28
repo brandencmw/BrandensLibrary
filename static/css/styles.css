@@ -1,6 +1,7 @@
 /* Main styles */
 html {
     height: 100%;
+    min-height: 100%;
 }
 
 * {
@@ -8,16 +9,26 @@ html {
 }
 
 body{
+    min-height: 100%;
     height: 100%;
     margin: 0;
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(1, 1, 1, 0), rgba(0, 0, 0, 0.4)), url('../images/library-wall.jpg');
     background-repeat: repeat-y;
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
+}
+
+h2, h3, h4 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+hr {
+    color: #444444;
+    width: 90%;
+    margin-bottom: 40px;
+    align-self: center;
 }
 
 .main-box {
-    height: 100%;
+    min-height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -26,7 +37,9 @@ body{
 footer {
     width: 15%;
     display: flex;
-    justify-content: space-between;
+    align-items: baseline;
+    justify-content: space-around;
+    margin-top: auto;
     margin-bottom: 10px;
 }
 
@@ -49,7 +62,7 @@ footer {
 .main-content {
     display: flex;
     width: 100%;
-    flex: 1 1 auto;
+    flex-grow: 1;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -121,7 +134,7 @@ footer {
     flex-direction: row;
     align-items: center;
     height: auto;
-    margin-top: 40px;
+    margin-top: 20px;
     width: 100%;
 }
 
@@ -144,7 +157,8 @@ footer {
     text-decoration: none;
     color: #FFFFFF;
     font-size: large;
-    font-family: sans-serif;
+    font-family: 'Montserrat';
+    font-weight: bolder;
 }
 
 .nav-search {
@@ -167,14 +181,87 @@ footer {
 
 /* Search Found Page */
 .results-frame {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
     margin: 20px 0;
+    padding: 80px 0;
     border-radius: 40px;
     min-height: 100%;
-    height: auto;
     width: 80%;
     filter: drop-shadow(16px, 16px, 10px, #000000);
     background-color: #FFFFFF;
 }
 
+.result-card {
+    display: flex;
+    flex-direction: row;
+    margin: 0 80px 40px 80px;
+}
 
+.result-card-image {
+    height: auto;
+    width: 20%;
+    margin-right: 40px;
+}
 
+.result-card-image img {
+    width: 100%;
+    height: auto;
+}
+
+.result-card-content {
+    width: 80%;
+}
+
+.card-title {
+    height: 30%;
+    font-size: 32px;
+}
+
+.card-subtitle {
+    height: 30%;
+    font-size: 20px;
+}
+
+.card-description {
+    height: 40%;
+    color: #444444;
+}
+
+/* Single Book Page */
+.single-book-main {
+    height: 70%;
+    display: flex;
+    flex-direction: row;
+}
+
+.single-book-main img {
+    width: 25%;
+    height: auto;
+    margin: 0 20px 40px 80px;
+}
+
+.single-book-description {
+    height: 30%;
+    margin: 0 80px;
+    font-size: 18px;
+}
+
+.single-book-title {
+    font-size: 40px;
+    height: 20%;
+}
+
+.single-book-topinfo {
+    font-size: 28px;
+    height: 40%;
+    line-height: 2;
+}
+
+.single-book-bottominfo {
+    font-size: 20px;
+    height: 40%;
+    line-height: 1.5;
+    justify-self: baseline;
+}

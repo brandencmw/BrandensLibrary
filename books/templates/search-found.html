@@ -1,3 +1,18 @@
-{% block 'results' %}
-<h1>FOUND</h1>
+{% block results %}
+{% for result in search_results %}
+<div class="result-card">
+    <div class="result-card-image">
+        <img src="{{ result.cover_img.url }}" alt="">
+    </div>
+    <div class="result-card-content">
+        <h2 class="card-title">{{result.title}}</h2>
+        <div class="card-subtitle">
+            <h3>{{result.author}}</h3>
+            <h3>{{result.publish_year}}</h3>
+        </div>
+        <h4 class="card-description">{{result.description | truncatechars:400}} . . . <a href="{% url 'book-info' result.id %}"><strong>Read More +</strong></a></h4>
+    </div>
+</div>
+<hr></hr>
+{% endfor %}
 {% endblock %}

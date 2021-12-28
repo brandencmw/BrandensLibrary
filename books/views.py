@@ -20,5 +20,11 @@ def search(request):
     print(results)
     return render(request, "search-results.html", context)
 
+def book(request, key):
+    book = Book.objects.get(id=key)
+    author = book.author
+    tags = book.tags.all()
+    context = {'book': book, 'author':author, 'tags':tags}
+    return render(request, "single-book.html", context)
         
 
