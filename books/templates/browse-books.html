@@ -19,9 +19,9 @@
                                 <img src="{{ book.cover_img }}" alt="">
                             </div>
                             <div class="browse-card-content">
-                                <h3><strong>{{book.title}}</strong></h3>
-                                <h3>{{book.author}}</h3>
-                                <h3>{{book.publish_year}}</h3>
+                                <h4><strong><a href="{% url 'book-info' book.id %}">{{book.title}}</a></strong></h4>
+                                <h4><a href="{% url 'author-page' book.author.id %}">{{book.author}}</a></h4>
+                                <h4>{{book.publish_year}}</h4>
                             </div>
                         </div>
                     </div>
