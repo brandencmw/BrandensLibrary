@@ -1,39 +1,39 @@
 {% block browse-filter %}
-<form action="" method=GET class="filter-form">
+<form action="{% url 'browse-books' %}" method=GET class="filter-form">
   <label for="authorInput" class="form-label">Author Name</label>
-  <input type="text" class="form-control mb-3" id="authorInput">
+  <input type="text" class="form-control mb-3" id="authorInput" name="author_name">
   
-  <label for="lengthRangeStart">Length (in pages)</label>
+  <label for="lenRangeStart">Length (in pages)</label>
   <div class="input-group mb-3">
-      <input type="number" class="form-control" placeholder="Range start" aria-label="Range start" id="lengthRangeStart">
+      <input type="number" class="form-control" placeholder="Range start" id="lenRangeStart" name="len_range_start">
       <span class="input-group-text">to</span>
-      <input type="number" class="form-control" placeholder="Range end" aria-label="Range end">
+      <input type="number" class="form-control" placeholder="Range end" aria-label="Range end" name="len_range_end">
   </div>
 
   <label for="pubRangeStart">Year of Publication</label>
   <div class="input-group mb-3">
-      <input type="number" class="form-control" placeholder="Range start" aria-label="Range start" id="pubRangeStart">
+      <input type="number" class="form-control" placeholder="Range start" id="pubRangeStart" name="pub_range_start">
       <span class="input-group-text">to</span>
-      <input type="number" class="form-control" placeholder="Range end" aria-label="Range end">
+      <input type="number" class="form-control" placeholder="Range end" name="pub_range_end">
   </div>
 
   <div class="form-check form-check-inline mb-3">
-    <input class="form-check-input" type="checkbox" id="fictionCheckbox" value="option1">
+    <input class="form-check-input" type="checkbox" id="fictionCheckbox" name="fiction_check">
     <label class="form-check-label" for="fictionCheckbox">Fiction</label>
   </div>
   <div class="form-check form-check-inline">
-    <input class="form-check-input" type="checkbox" id="nonfictionCheckbox" value="option2">
+    <input class="form-check-input" type="checkbox" id="nonfictionCheckbox" name="nonfiction_check">
     <label class="form-check-label" for="nonfictionCheckbox">Non-Fiction</label>
   </div>
 
   <div class="mb-3">
     <label for="tagSelection">Tags</label>
-    <select class="form-select form-select-md" id="tagSelection" multiple>
+    <select class="form-select form-select-md" id="tagSelection" name="tag_list" multiple>
       {% for tag in tags %}
         <option value="{{ tag }}">{{ tag }}</option>
       {% endfor %}
     </select>
   </div>
-  <button class="btn btn-primary">Submit</button>
+  <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 {% endblock %}

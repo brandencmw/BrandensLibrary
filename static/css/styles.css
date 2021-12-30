@@ -18,6 +18,7 @@ body{
 
 h2, h3, h4 {
     font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
 }
 
 hr {
@@ -70,7 +71,7 @@ footer {
 
 /* Main search bar */
 .search-form {
-    width: 65%;
+    width: 80%;
     position: relative;
     margin: 0;
 }
@@ -127,6 +128,49 @@ footer {
     font-family: sans-serif;
     font-weight: lighter;
 }
+
+
+.recently-added-section {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
+    margin-bottom: 40px;
+}
+
+.recently-added-section h3 {
+    color: #FFFFFF;
+}
+
+.recently-added-panel {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 40px 80px;
+    background-color: #FFFFFF;
+    border-radius: 20px;
+}
+
+.recently-added-card {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+}
+
+.recently-added-img {
+    width: auto;
+    height: 300px;
+}
+
+.recently-added-img img {
+    width: auto;
+    height: 100%;
+}
+
+.recently-added-details {
+    height: auto;
+}
+
 
 /* Navbar styles */
 .nav {
@@ -270,6 +314,10 @@ footer {
 }
 
 /* Browse styles */
+
+.accordion-item {
+    border: none;
+}
 
 .browse-content-box {
     display: flex;

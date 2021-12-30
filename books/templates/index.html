@@ -22,5 +22,23 @@
         <h2>Or</h2>
         <h2><a href="{% url 'browse-books' %}">Browse the Collection</a></h2>
     </div>
+
+    <div class="recently-added-section">
+        <h3>Recently Added</h3>
+        <div class="recently-added-panel">
+            {% for book in recently_added %}
+                <div class="recently-added-card">
+                    <div class="recently-added-img">
+                        <img src="{{ book.cover_img.url }}" alt="">
+                    </div>
+                    <div class="recently-added-details">
+                        <h5>{{ book.title }}</h5>
+                        <h5>{{ book.author }}</h5>
+                        <h5>Added: {{ book.created }}</h5>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
 </div>
 {% endblock %}
