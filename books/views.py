@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Book
+from .models import Book, Tag
 from django.http import HttpResponse
 
 
@@ -29,7 +29,11 @@ def book(request, key):
 
 def browse(request):
     books = Book.objects.all()
-    context = {'books':books}
+    tags = Tag.objects.all()
+    context = {
+        'books':books,
+        'tags':tags
+    }
     return render(request, "browse-books.html", context)
         
 

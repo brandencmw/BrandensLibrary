@@ -9,7 +9,7 @@
             <div class="single-book-facts">
                 <h2 class="single-book-title">{{book.title}}</h2>
                 <div class="single-book-topinfo">
-                    <h3>Written by: {{author}}</h3>
+                    <h3>Written by: <a href="{% url 'author-page' author.id %}">{{author}}</a></h3>
                     <h3>Published: {{book.publish_year}}</h3>
                 </div>
                 <div class="single-book-bottominfo">

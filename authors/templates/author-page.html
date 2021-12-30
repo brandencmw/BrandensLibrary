@@ -6,14 +6,32 @@
     <div class="results-frame">
         <div class="author-facts">
             <div class="author-img">
-
+                <img src="{{ author.headshot.url }}" alt="Picture of {{ author.first_name }} {{ author.last_name }}">
             </div>
             <div class="author-bio">
-                
+                <h2 class="author-name">{{ author.first_name }} {{ author.last_name }}</h2>
+                <p>
+                    Stephen Edwin King (born September 21, 1947) is an American author of horror, supernatural fiction, suspense, crime, science-fiction, and fantasy novels. Described as the "King of Horror", a play on his surname and a reference to his high standing in pop culture, his books have sold more than 350 million copies, and many have been adapted into films, television series, miniseries, and comic books. King has published 63 novels, including seven under the pen name Richard Bachman, and five non-fiction books. He has also written approximately 200 short stories, most of which have been published in book collections.
+                </p>
             </div>
         </div>
-        <div class="author-works">
-
+        <div class="browse-content-box">
+            <h2>Titles by {{ author.first_name }} {{ author.last_name }}</h2>
+            <div class="row">
+                {% for book in publications %}
+                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+                        <div class="browse-card">
+                            <div class="browse-card-img">
+                                <img src="{{ book.cover_img.url }}" alt="">
+                            </div>
+                            <div class="browse-card-content">
+                                <h4><strong><a href="{% url 'book-info' book.id %}">{{book.title}}</a></strong></h4>
+                                <h4>{{book.publish_year}}</h4>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
         </div>
     </div>
 {% endblock %}

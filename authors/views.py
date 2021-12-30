@@ -4,8 +4,7 @@ from books.models import Book
 
 def author(request, key):
     author = Author.objects.get(id=key)
-    id = author.id
-    publications = Book.objects.filter(id__exact=key)
+    publications = Book.objects.filter(author__id=key)
 
     context = {
         "author": author,
