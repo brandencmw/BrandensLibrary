@@ -32,9 +32,9 @@
                         <img src="{{ book.cover_img.url }}" alt="">
                     </div>
                     <div class="recently-added-details">
-                        <h5>{{ book.title }}</h5>
-                        <h5>{{ book.author }}</h5>
-                        <h5>Added: {{ book.created }}</h5>
+                        <h5><a href="{% url 'book-info' book.id %}">{{ book.title }}</a></h5>
+                        <h5><a href="{% url 'author-page' book.author.id %}">{{ book.author }}</a></h5>
+                        <p>Added: {{ book.created|date:"M jS, Y" }}</p>
                     </div>
                 </div>
             {% endfor %}

@@ -6,8 +6,7 @@ from django.http import HttpResponse
 
 
 def home(request):
-
-    recently_added = Book.objects.all().order_by("created")[:5:-1]
+    recently_added = Book.objects.all().order_by("created")[:7:-1]
     context = {
         "recently_added":recently_added
     }
