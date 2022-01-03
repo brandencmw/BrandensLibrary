@@ -6,9 +6,9 @@
         <img src="{{ result.cover_img.url }}" alt="">
     </div>
     <div class="result-card-content">
-        <h2 class="card-title">{{result.title}}</h2>
+        <h2 class="card-title"><a href="{% url 'book-info' result.id %}">{{result.title}}</a></h2>
         <div class="card-subtitle">
-            <h3>{{result.author}}</h3>
+            <h3><a href="{% url 'author-page' result.author.id %}">{{result.author}}</a></h3>
             <h3>{{result.publish_year}}</h3>
         </div>
         <p class="card-description">{{result.description | truncatechars:400}}<a href="{% url 'book-info' result.id %}">Read More +</a></p>
