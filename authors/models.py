@@ -6,7 +6,6 @@ class Author(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
-    bio = models.TextField(blank=True, null=True)
     headshot = models.ImageField(null=True, blank=True, default="default.jpg")
 
     def __str__(self):
