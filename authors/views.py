@@ -5,7 +5,8 @@ import requests
 
 def author(request, key):
     author = Author.objects.get(id=key)
-    publications = Book.objects.filter(author__id=key)
+    author_id = author.id
+    publications = Book.objects.filter(authors__id__in=[author_id])
 
     query = author.first_name + author.last_name
     api_url = "https://en.wikipedia.org/w/api.php"

@@ -362,7 +362,7 @@ hr:last-child {
 }
 
 .collapsed {
-    width: 200px;
+    width: 280px;
     transition: width 0.5s ease-in-out;
 }
 

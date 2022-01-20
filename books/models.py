@@ -6,7 +6,8 @@ from tags.models import Tag
 class Book(models.Model):
     BOOK_CATEGORY = (
         ("f", "Fiction"),
-        ("nf", "Non Fiction")
+        ("nf", "Non Fiction"),
+        ("hf", "Historical Fiction")
     )
 
     id = models.UUIDField(default=uuid4, unique=True, primary_key=True, editable=False)
@@ -16,7 +17,7 @@ class Book(models.Model):
     title = models.CharField(max_length=200)
     description = models.TextField(null=True, blank=True)
     category = models.CharField(max_length=200, choices=BOOK_CATEGORY, null=True, blank=True)
-    author = models.ForeignKey(Author, on_delete=models.CASCADE, default="")
+    authors = models.ManyToManyField(Author)
     tags = models.ManyToManyField(Tag, blank=True)
     cover_img = models.ImageField(null=True, blank=True, default="default.jpg")
 

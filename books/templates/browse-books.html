@@ -7,7 +7,7 @@
         <div class="accordion" id="filterAccordion">
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingOne">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne"><h5>Filter Options</h5>
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne"><h5>Sorting and Filtering</h5>
                 </button>
                 </h2>
                 <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#filterAccordion">
@@ -29,8 +29,14 @@
                             </div>
                             <div class="browse-card-content">
                                 <h4><strong><a href="{% url 'book-info' book.id %}">{{book.title}}</a></strong></h4>
-                                <h4><a href="{% url 'author-page' book.author.id %}">{{book.author}}</a></h4>
-                                <h4>{{book.publish_year}}</h4>
+                                {% for author in book.authors.all %}
+                                    <h4><a href="{% url 'author-page' author.id %}">{{ author }}</a></h4>
+                                {% endfor %}
+                                {% if book.publish_year > 0 %}
+                                    <h4>{{book.publish_year}}</h4>
+                                {% else %}
+                                    <h4>{{ book.publish_year | cut:"-" }} BC</h4>
+                                {% endif %}
                             </div>
                         </div>
                     </div>

@@ -33,7 +33,11 @@
                     </div>
                     <div class="recently-added-details">
                         <h5><a href="{% url 'book-info' book.id %}">{{ book.title }}</a></h5>
-                        <h5><a href="{% url 'author-page' book.author.id %}">{{ book.author }}</a></h5>
+                            {% for author in book.authors.all %}
+                            <h5>
+                                <a href="{% url 'author-page' author.id %}">{{ author.first_name }} {{ author.last_name }}</a>
+                            </h5>
+                            {% endfor %}
                         <p>Added: {{ book.created|date:"M jS, Y" }}</p>
                     </div>
                 </div>

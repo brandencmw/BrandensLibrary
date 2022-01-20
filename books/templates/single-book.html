@@ -9,8 +9,16 @@
             <div class="single-book-facts">
                 <h2 class="single-book-title">{{book.title}}</h2>
                 <div class="single-book-topinfo">
-                    <h3>Written by: <a href="{% url 'author-page' author.id %}">{{author}}</a></h3>
-                    <h3>Published: {{book.publish_year}}</h3>
+                    <h3>Written by: 
+                        {% for author in authors %}
+                            <a href="{% url 'author-page' author.id %}">{{ author }}</a>
+                        {% endfor %}
+                    </h3>
+                    {% if publish_year > 0 %}
+                        <h3>Published: {{ book.publish_year }}</h3>
+                    {% else %}
+                        <h3>Published: {{ book.publish_year | cut:"-" }} BC</h3>
+                    {% endif %}
                 </div>
                 <div class="single-book-bottominfo">
                     <h4>Length: {{book.length}} pages</h4>
@@ -23,7 +31,7 @@
             </div>
         </div>
         <div class="single-book-description">
-            <p>{{book.description}}</p>
+            <p>{{ book.description | linebreaks }}</p>
         </div>
     </div>
 {% endblock %}

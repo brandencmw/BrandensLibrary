@@ -1,17 +1,25 @@
 {% block results %}
-<h5 class="mb-3">Your search returned the following results:</h5>
+<h5 class="mb-3">Your search returned {{ search_results | length }} results:</h5>
 {% for result in search_results %}
 <div class="result-card">
     <div class="result-card-image">
         <img src="{{ result.cover_img.url }}" alt="">
     </div>
     <div class="result-card-content">
-        <h2 class="card-title"><a href="{% url 'book-info' result.id %}">{{result.title}}</a></h2>
+        <h2 class="card-title"><a href="{% url 'book-info' result.id %}">{{ result.title }}</a></h2>
         <div class="card-subtitle">
-            <h3><a href="{% url 'author-page' result.author.id %}">{{result.author}}</a></h3>
-            <h3>{{result.publish_year}}</h3>
+            <h3>
+                {% for author in result.authors.all %}
+                    <a href="{% url 'author-page' author.id %}">{{ author }}</a>
+                {% endfor %}
+            </h3>
+            {% if result.publish_year > 0 %}
+                <h3>{{ result.publish_year }}</h3>
+            {% else %}
+                <h3>{{ result.publish_year | cut:"-" }} BC</h3>
+            {% endif %}
         </div>
-        <p class="card-description">{{result.description | truncatechars:400}}<a href="{% url 'book-info' result.id %}">Read More +</a></p>
+        <p class="card-description">{{ result.description | truncatechars:400 }}<a href="{% url 'book-info' result.id %}">Read More +</a></p>
     </div>
 </div>
 <hr></hr>
